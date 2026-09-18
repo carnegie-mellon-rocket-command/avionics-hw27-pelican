@@ -12,6 +12,121 @@
 		(comment 1 "Designed by Rahim Malik")
 	)
 	(lib_symbols
+		(symbol "power:PWR_FLAG"
+		(power global)
+		(pin_numbers
+			(hide yes)
+		)
+		(pin_names
+			(offset 0)
+			(hide yes)
+		)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "#FLG"
+			(at 0 1.905 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "PWR_FLAG"
+			(at 0 3.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Special symbol for telling ERC where power comes from"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "flag power"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "PWR_FLAG_0_0"
+			(pin power_out line
+				(at 0 0 90)
+				(length 0)
+				(name ""
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(symbol "PWR_FLAG_0_1"
+			(polyline
+				(pts
+					(xy 0 0) (xy 0 1.27) (xy -1.016 1.905) (xy 0 2.54) (xy 1.016 1.905) (xy 0 1.27)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
 		(symbol "C_GRM155R61A105KE15D:GRM155R61A105KE15D"
 			(body_styles demorgan)
 			(pin_names
@@ -6983,7 +7098,7 @@
 						)
 					)
 				)
-				(pin power_out line
+				(pin passive line
 					(at 27.94 5.08 180)
 					(length 5.08)
 					(name "BAT@2"
@@ -7127,7 +7242,7 @@
 						)
 					)
 				)
-				(pin power_out line
+				(pin passive line
 					(at 27.94 17.78 180)
 					(length 5.08)
 					(name "OUT@2"
@@ -7531,7 +7646,7 @@
 						)
 					)
 				)
-				(pin power_out line
+				(pin passive line
 					(at 38.1 -2.54 180)
 					(length 5.08)
 					(name "VOUT"
@@ -10019,7 +10134,7 @@
 		)
 		(uuid "4101dc27-76d2-478c-9e90-efe9a2e2eb4a")
 	)
-	(global_label "BAT_CHG_SRC_STAT"
+	(global_label "CHG_IN_VLD_N"
 		(shape output)
 		(at 295.91 82.55 180)
 		(fields_autoplaced yes)
@@ -10067,7 +10182,7 @@
 			)
 		)
 	)
-	(global_label "BAT_V_STAT"
+	(global_label "VBAT_SNS"
 		(shape output)
 		(at 166.37 86.36 0)
 		(fields_autoplaced yes)
@@ -10115,7 +10230,7 @@
 			)
 		)
 	)
-	(global_label "BAT_CHG_STAT"
+	(global_label "CHG_STAT_N"
 		(shape output)
 		(at 312.42 82.55 0)
 		(fields_autoplaced yes)
@@ -10139,7 +10254,7 @@
 			)
 		)
 	)
-	(global_label "HOLD_PWR"
+	(global_label "PWR_HOLD"
 		(shape input)
 		(at 114.3 118.11 180)
 		(fields_autoplaced yes)
@@ -10163,7 +10278,7 @@
 			)
 		)
 	)
-	(global_label "PWR_SRC"
+	(global_label "PWR_SRC_STAT"
 		(shape input)
 		(at 185.42 170.18 180)
 		(fields_autoplaced yes)
@@ -10175,7 +10290,7 @@
 		)
 		(uuid "cca5f205-9065-4376-927c-f7c80ccbb48c")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 173.7263 170.18 0)
+			(at 168.5254 170.18 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10187,7 +10302,7 @@
 			)
 		)
 	)
-	(global_label "PWR_SRC"
+	(global_label "PWR_SRC_STAT"
 		(shape input)
 		(at 173.99 185.42 0)
 		(fields_autoplaced yes)
@@ -10199,7 +10314,7 @@
 		)
 		(uuid "daec8cdb-6ec1-45e7-b1e0-043980176118")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 185.6837 185.42 0)
+			(at 190.8846 185.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18218,6 +18333,63 @@
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
 					(reference "C209")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:PWR_FLAG")
+		(at 124.46 177.8 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "33a9aa66-3a70-46eb-ae72-5bb226d6634a")
+		(property "Reference" "#FLG0201"
+			(at 124.46 173.99 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "PWR_FLAG"
+			(at 124.46 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 124.46 177.8 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 124.46 177.8 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "7177907f-1a0e-4828-99a3-fb860e3f5055")
+		)
+		(instances
+			(project "pelican"
+				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
+					(reference "#FLG0201")
 					(unit 1)
 				)
 			)

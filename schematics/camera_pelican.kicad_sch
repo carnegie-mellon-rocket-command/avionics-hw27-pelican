@@ -3767,7 +3767,7 @@
 		)
 		(uuid "e2203dc6-daa3-4dd4-9199-fd02c9e874a4")
 	)
-	(label "CAM_RESET"
+	(label "CAM_RST_N"
 		(at 86.36 63.5 0)
 		(effects
 			(font

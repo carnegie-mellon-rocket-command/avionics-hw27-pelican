@@ -30,4 +30,5 @@
 	(lib (name "U_BQ24074RGTT") (type "KiCad") (uri "${KIPRJMOD}/libraries/U_BQ24074RGTT/footprints.pretty") (options "") (descr ""))
 	(lib (name "U_TPS2116DRLR") (type "KiCad") (uri "${KIPRJMOD}/libraries/U_TPS2116DRLR/footprints.pretty") (options "") (descr ""))
 	(lib (name "U_TPS61023DRLR") (type "KiCad") (uri "${KIPRJMOD}/libraries/U_TPS61023DRLR/footprints.pretty") (options "") (descr ""))
+  (lib (name "testpoint") (type "KiCad") (uri "${KIPRJMOD}/libraries/testpoint/footprints.pretty") (options "") (descr ""))
 )
