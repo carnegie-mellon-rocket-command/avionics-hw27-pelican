@@ -140,22 +140,22 @@
       },
       "rules": {
         "max_error": 0.005,
-        "min_clearance": 0.0,
+        "min_clearance": 0.127,
         "min_connection": 0.0,
-        "min_copper_edge_clearance": 0.5,
+        "min_copper_edge_clearance": 0.3,
         "min_groove_width": 0.0,
-        "min_hole_clearance": 0.25,
-        "min_hole_to_hole": 0.25,
+        "min_hole_clearance": 0.254,
+        "min_hole_to_hole": 0.5,
         "min_microvia_diameter": 0.2,
-        "min_microvia_drill": 0.1,
+        "min_microvia_drill": 0.15,
         "min_resolved_spokes": 2,
-        "min_silk_clearance": 0.0,
-        "min_text_height": 0.8,
-        "min_text_thickness": 0.08,
+        "min_silk_clearance": 0.15,
+        "min_text_height": 1.0,
+        "min_text_thickness": 0.15,
         "min_through_hole_diameter": 0.3,
-        "min_track_width": 0.2,
-        "min_via_annular_width": 0.1,
-        "min_via_diameter": 0.5,
+        "min_track_width": 0.127,
+        "min_via_annular_width": 0.13,
+        "min_via_diameter": 0.45,
         "solder_mask_to_copper_clearance": 0.0,
         "use_height_for_length_calcs": true
       },
@@ -260,7 +260,12 @@
     "equivalence_files": []
   },
   "erc": {
-    "erc_exclusions": [],
+    "erc_exclusions": [
+      [
+        "pin_to_pin|1282700|469900|4b5f24b4-c5f4-45fe-849e-6c55a47a95a0|5113aea8-2f7b-44f7-b1ab-c6772d02dcc6|/03ccc822-2fac-4029-af97-539e9460fe35/676f47cc-81fa-4570-932f-1e8291c2a37f|/03ccc822-2fac-4029-af97-539e9460fe35/676f47cc-81fa-4570-932f-1e8291c2a37f|/03ccc822-2fac-4029-af97-539e9460fe35/676f47cc-81fa-4570-932f-1e8291c2a37f",
+        ""
+      ]
+    ],
     "meta": {
       "version": 0
     },
@@ -468,7 +473,7 @@
       "pin_not_connected": "error",
       "pin_not_driven": "error",
       "pin_to_pin": "warning",
-      "power_pin_not_driven": "error",
+      "power_pin_not_driven": "ignore",
       "same_local_global_label": "warning",
       "similar_label_and_power": "warning",
       "similar_labels": "warning",
@@ -512,6 +517,78 @@
         "via_diameter": 0.6,
         "via_drill": 0.3,
         "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 0.15,
+        "diff_pair_gap": 0.15,
+        "diff_pair_width": 0.15,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "CSI",
+        "pcb_color": "rgb(196, 84, 232)",
+        "priority": 1,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.15,
+        "tuning_profile": "",
+        "via_diameter": 0.6,
+        "via_drill": 0.3,
+        "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 0.25,
+        "diff_pair_gap": 0.2,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "ETH",
+        "pcb_color": "rgb(66, 133, 244)",
+        "priority": 2,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.2,
+        "tuning_profile": "",
+        "via_diameter": 0.6,
+        "via_drill": 0.3,
+        "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 0.2,
+        "diff_pair_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "Power",
+        "pcb_color": "rgb(229, 57, 53)",
+        "priority": 0,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.5,
+        "tuning_profile": "",
+        "via_diameter": 0.8,
+        "via_drill": 0.4,
+        "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 0.2,
+        "diff_pair_gap": 0.15,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "USB",
+        "pcb_color": "rgb(66, 212, 108)",
+        "priority": 3,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.2,
+        "tuning_profile": "",
+        "via_diameter": 0.6,
+        "via_drill": 0.3,
+        "wire_width": 6
       }
     ],
     "meta": {
@@ -519,7 +596,64 @@
     },
     "net_colors": null,
     "netclass_assignments": null,
-    "netclass_patterns": []
+    "netclass_patterns": [
+      {
+        "netclass": "USB",
+        "pattern": "USB_P"
+      },
+      {
+        "netclass": "USB",
+        "pattern": "USB_N"
+      },
+      {
+        "netclass": "USB",
+        "pattern": "*USB_ESD_P"
+      },
+      {
+        "netclass": "USB",
+        "pattern": "*USB_ESD_N"
+      },
+      {
+        "netclass": "CSI",
+        "pattern": "CSI_*"
+      },
+      {
+        "netclass": "ETH",
+        "pattern": "ETH_RX_*"
+      },
+      {
+        "netclass": "ETH",
+        "pattern": "ETH_TX_*"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "VIN"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "VUSB"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "VBAT"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "VBAT_GATE"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "VBAT_PROT"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "VCC_5V0"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "VCC_3V3"
+      }
+    ]
   },
   "pcbnew": {
     "last_paths": {
@@ -904,7 +1038,7 @@
         "uuid": "03ccc822-2fac-4029-af97-539e9460fe35"
       }
     ],
-    "used_designators": "LED302_UART301,SW301_BOOT301,U203_CHG201,D501_ESD501,J301_UART301,U202_BOOST201,LED201_BAT201,LED401_STORE401,U301_SOC301,J201_BAT201,D1,D501,J701_ETH701,LED601_CAM601,C1-27,C201-212,C301-302,C401,C501,C601-602,C701-704,C801-802,J501_USBC501,SW302_PROG301,J401_uSD401,U1-4,U201-203,U301,J601_MIPI601,SW1-3,SW301-302,Q1-5,Q201-205,Q601,M801_MIC801,LED301_ALIVE301,#PWR1-103,#PWR201-241,#PWR401-406,#PWR501-508,#PWR601-609,#PWR701-705,#PWR801-802,L1,L201,J202_SW201,R1-37,R201-222,R301-305,R401-402,R501-504,R601-603,R701-702,R801,U201_MUX201,LED1-9,LED201,LED301-303,LED401,LED601,M1,M801,J1-7,J201-202,J301,J401,J501,J601,J701,LED303_DEBUG301,TP1-2,TP301-302",
+    "used_designators": "TP1-2,TP301-302,M1,M801,LED303_DEBUG301,J1-7,J201-202,J301,J401,J501,J601,J701,J801,CN201,LED1-9,LED201,LED301-303,LED401,LED601,R1-37,R201-222,R301-305,R401-402,R501-504,R601-603,R701-702,R801,U201_MUX201,J202_SW201,USB701,L1,L201,#PWR1-103,#PWR201-241,#PWR401-406,#PWR501-508,#PWR601-609,#PWR701-705,#PWR709,#PWR801-802,Q1-5,Q201-205,Q601,SW1-3,SW301-302,J601_MIPI601,J401_uSD401,SW302_PROG301,C1-27,C201-212,C301-302,C401,C501,C601-602,C701-704,C801-802,J501_USBC501,LED601_CAM601,D1,D501,J701_ETH701,U1-4,U201-203,U301,J201_BAT201,U301_SOC301,M801_MIC801,LED301_ALIVE301,JTAG_TP303-305,LED401_STORE401,LED201_BAT201,U202_BOOST201,J301_UART301,D501_ESD501,SW301_BOOT301,UART_TP301,U203_CHG201,LED302_UART301",
     "variants": []
   },
   "sheets": [
