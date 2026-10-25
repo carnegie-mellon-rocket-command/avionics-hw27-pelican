@@ -1,0 +1,34 @@
+(version 1)
+
+# 100BASE-TX is loose; match P/N within each pair only
+(rule "ETH intra-pair skew"
+	(condition "A.inDiffPair('ETH_*')")
+	(constraint skew (max 1mm)))
+
+# one rule per pair: a shared '*USB*' condition made KiCad compare all four nets to one group length
+(rule "USB module pair skew"
+	(condition "A.inDiffPair('USB')")
+	(constraint skew (max 0.25mm)))
+
+# looser: the A/B-row crossing at USB701 adds a layer hop to one net
+(rule "USB connector pair skew"
+	(condition "A.inDiffPair('*USB_ESD')")
+	(constraint skew (max 0.5mm)))
+
+# Min track widths by rail current (IPC-2221, 1oz outer, 20C rise); warnings so short necks into fine-pitch pads stay reviewable.
+# Assumes ~1A load on VCC_5V0 (=> ~2A boost input at 3.0V cell), VUSB limited by charger ILIM (~1.46A), charge current ~1A.
+(rule "Power 2A min width"
+	(severity warning)
+	(condition "A.NetName == 'VBAT' || A.NetName == 'VBAT_GATE' || A.NetName == 'VBAT_PROT' || A.NetName == '/Power/BOOST_IN' || A.NetName == 'Net-(BOOST_U202-SW)' || A.NetName == 'Net-(Q202-PadS)'")
+	(constraint track_width (min 0.5mm)))
+
+(rule "VUSB min width"
+	(severity warning)
+	(condition "A.NetName == 'VUSB'")
+	(constraint track_width (min 0.35mm)))
+
+# Pad-stub waiver: tracks under 0.25mm long are necks into 0.3mm pads, not current-carrying runs.
+(rule "pad stub width waiver"
+	(severity ignore)
+	(condition "A.Type == 'Track' && A.Length < 0.25mm")
+	(constraint track_width (min 0.1mm)))

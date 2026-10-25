@@ -21,13 +21,6 @@
 	(lib (name "M_MIC4013-X") (type "KiCad") (uri "${KIPRJMOD}/libraries/M_MIC4013-X/footprints.pretty") (options "") (descr ""))
 	(lib (name "MountingHole") (type "KiCad") (uri "${KIPRJMOD}/libraries/MountingHole/footprints.pretty") (options "") (descr "NPTH mounting holes M1/M1.5/M2/M2.5"))
 	(lib (name "P_Core1106") (type "KiCad") (uri "${KIPRJMOD}/libraries/P_Core1106/footprints.pretty") (options "") (descr ""))
-	(lib
-	  (name "ProtoFlow.pretty")
-	  (type "KiCad")
-	  (uri "${KIPRJMOD}/ProtoFlow.pretty")
-	  (options "")
-	  (descr "ProtoFlow Project Footprints (Portable)")
-	)
 	(lib (name "Q_DMG2305UX-13") (type "KiCad") (uri "${KIPRJMOD}/libraries/Q_DMG2305UX-13/footprints.pretty") (options "") (descr ""))
 	(lib (name "Q_NDS7002A") (type "KiCad") (uri "${KIPRJMOD}/libraries/Q_NDS7002A/footprints.pretty") (options "") (descr ""))
 	(lib (name "R_RC0402FR") (type "KiCad") (uri "${KIPRJMOD}/libraries/R_RC0402FR/footprints.pretty") (options "") (descr ""))
